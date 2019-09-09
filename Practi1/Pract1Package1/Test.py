@@ -19,7 +19,7 @@ driver.find_element_by_name("password").send_keys(pwd)
 driver.implicitly_wait(200)
 driver.find_element_by_id("passwordNext").click()
 driver.implicitly_wait(200)
-# elem.send_keys(Keys.RETURN)
+elem.send_keys(Keys.RETURN)
 driver.close() 
 
 
