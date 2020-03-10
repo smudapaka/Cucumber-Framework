@@ -1,0 +1,196 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>CucumberTestNG</groupId>
+	<artifactId>CucumberTestNG</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>CucumberTestNG</name>
+	<url>http://maven.apache.org</url>
+
+  <properties>
+       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<cucumber.version>1.2.5</cucumber.version>
+		<selenium.version>3.12.0</selenium.version>
+		<json.version>20140107</json.version>
+		<testng.version>6.13.1</testng.version>
+		<extentreports.version>3.1.1</extentreports.version>
+		<cucumber-extentsreport.version>3.1.0</cucumber-extentsreport.version>
+		<apache.poi.version>3.14</apache.poi.version>
+		<commons-io.version>2.6</commons-io.version>
+		<log4j.version>1.2.17</log4j.version>
+		<browserstack.version>1.0.3</browserstack.version>
+		<restassured.version>3.0.0</restassured.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+    
+	    <dependency>
+		  <groupId>org.testng</groupId>
+		  <artifactId>testng</artifactId>
+		  <version>6.8</version>
+		  <scope>test</scope>
+		</dependency>
+		
+        <dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
+		</dependency>
+		
+		<dependency>
+		     <groupId>com.aventstack</groupId>
+		     <artifactId>extentreports</artifactId>
+		     <version>3.1.5</version>
+		</dependency>
+    
+    <!-- extent reports dependencies starts -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>${extentreports.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.vimalselvam</groupId>
+			<artifactId>cucumber-extentsreport</artifactId>
+			<version>${cucumber-extentsreport.version}</version>
+		</dependency>
+		
+		<!-- extent reports dependencies ends -->
+		
+		
+    <dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.17</version>
+    </dependency>
+    
+   	 <dependency>
+		<groupId>org.apache.poi</groupId>
+		<artifactId>poi</artifactId>
+		<version>3.9</version>
+	</dependency>
+    <dependency>
+		     <groupId>org.seleniumhq.selenium</groupId>
+		     <artifactId>selenium-java</artifactId>
+		     <version>3.7.0</version>
+		 </dependency>
+		<dependency>
+		    <groupId>info.cukes</groupId>
+		    <artifactId>cucumber-java</artifactId>
+		    <version>1.2.5</version>
+		</dependency>
+		<dependency>
+		    <groupId>info.cukes</groupId>
+		    <artifactId>cucumber-jvm-deps</artifactId>
+		    <version>1.0.5</version>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>info.cukes</groupId>
+		    <artifactId>cucumber-junit</artifactId>
+		    <version>1.2.5</version>
+		    <scope>test</scope>
+		</dependency>
+		
+				<!-- Apache POI dependencies :: Start -->
+				<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>4.0.1</version>
+		</dependency>
+		 
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-ooxml</artifactId>
+		    <version>4.0.1</version>
+		</dependency>
+		<!-- Apache POI dependencies :: End -->
+		<dependency>
+
+		<groupId>net.sourceforge.jexcelapi</groupId>
+		<artifactId>jxl</artifactId>
+		<version>2.6</version>
+
+</dependency>
+        <dependency>
+		    <groupId>com.vimalselvam</groupId>
+		    <artifactId>cucumber-extentsreport</artifactId>
+		    <version>3.0.2</version>
+		   </dependency>
+		   
+		    <dependency>
+		    <groupId>com.aventstack</groupId>
+		    <artifactId>extentreports</artifactId>
+		    <version>3.1.2</version>
+	   </dependency>
+	   
+  </dependencies>
+  
+     
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.4</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.21.0</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+			<plugin>
+						<groupId>net.masterthought</groupId>
+                         <artifactId>maven-cucumber-reporting</artifactId>
+                         <version>4.11.2</version>
+				<executions>
+					<execution>
+						<id>execution</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<projectName>CucumberSelenium</projectName>  <!-- Replace with project name -->
+							<outputDirectory>target/cucumber-reports/advanced-reports</outputDirectory>
+							<cucumberOutput>target/cucumber-reports/CucumberTestReport.json</cucumberOutput>
+							 <jsonFiles>
+                                        <param>**/*.json</param>
+                                 </jsonFiles>
+                                 <skippedFails>true</skippedFails>
+                                 <enableFlashCharts>true</enableFlashCharts>
+                                 <buildNumber>1</buildNumber>
+							<parallelTesting>false</parallelTesting>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
+	
