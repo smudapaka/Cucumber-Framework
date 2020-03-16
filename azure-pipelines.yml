@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-2010'
+  vmImage: 'windows-2019'
 
 steps:
 - task: Maven@3
